@@ -1,0 +1,28 @@
+{
+    "name": "charleskoko/sanctum-authentication",
+    "description": "This installs Laravel sanctum and generates everything needed for authentication",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Charleskoko\\SanctumAuthentication\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Charleskoko\\SanctumAuthentication\\SanctumAuthenticationServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Charles Koko",
+            "email": "jephtekoko@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+
+    }
+}
