@@ -3,8 +3,6 @@
 use Charleskoko\SanctumAuthentication\Http\AuthenticationController;
 use Illuminate\Support\Facades\Route;
 
-Route::post('api/v1/register', [AuthenticationController::class,'register'])->name('api.v1.register');
-Route::post('api/v1/login', [AuthenticationController::class, 'login'])->name('api.v1.login');
-Route::middleware(['auth:sanctum'])->group(function () {
-    Route::post('api/v1/logout', [AuthenticationController::class,'logout'])->name('api.v1.logout');
-});
+Route::post(config('sanctumAuthentication.registration_uri'), [AuthenticationController::class, 'register']);
+Route::post(config('sanctumAuthentication.login_uri'), [AuthenticationController::class, 'login']);
+Route::post(config('sanctumAuthentication.logout_uri'), [AuthenticationController::class, 'logout'])->middleware(['auth:sanctum']);
